@@ -1,0 +1,17 @@
+// Denmark Flag (Week 4 - Part 1)
+
+var canW = 370 // Canvas Width
+var canH = 240 // Canvas Height
+
+function setup() {
+  createCanvas(canW, canH);
+  background(200, 16, 46);
+}
+
+function draw() {
+  var L2Xpos = canW*14/37
+  stroke(255)
+  strokeWeight(canW*4/37)
+  line(0, canH/2, canW, canH/2)
+  line(L2Xpos, 0, L2Xpos, canH)
+}
