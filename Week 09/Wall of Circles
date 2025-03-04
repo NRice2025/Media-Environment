@@ -1,0 +1,18 @@
+function setup() {
+  createCanvas(800, 300);
+}
+
+function draw() {
+  background(255, 55, 250);
+  
+  //properties
+  noStroke();
+  fill(100, 150, 255);
+  var diameter = 40;
+  
+  for (var i = 0; i < width / diameter; i += 1) { 
+      for (var j = 0; j < height / diameter; j += 1) { 
+        ellipse(i*diameter + diameter / 2, j*diameter + diameter / 2, diameter, diameter);
+      }
+  }
+}

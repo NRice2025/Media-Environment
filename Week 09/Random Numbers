@@ -1,0 +1,21 @@
+function setup() {
+  createCanvas(800, 300);
+  textAlign(CENTER, CENTER)
+  frameRate(1.25)
+}
+
+function draw() {
+  background(1, 75, 100);
+  //randome w/ no parameter (0 to 1)
+  var ran_0 = random();
+  //random w/ one parameter (0 to val)
+  var ran_1 = random(10);
+  //randome w/ 2 parameters (val_1 to val_2)
+  var ran_2 = random(100,1000)
+  
+  fill(255);
+  textSize(24);
+  text(ran_0, width/2, height/2 - 40);
+  text(ran_1, width/2, height/2);
+  text(ran_2, width/2, height/2 + 40);
+}
