@@ -1,0 +1,48 @@
+function setup() {
+  createCanvas(1000, 400);
+  background(220);
+}
+
+function draw() {
+  var keyW = width/14-5;
+  var whiteH = 300;
+  offset = 30;
+  
+  // all of white keys
+  for (var i = 0; i < 14; i++)
+    {
+      fill(255)
+      rect(offset+(i*keyW), offset, keyW, whiteH, 0, 0, 20, 20);
+    }
+  
+  // black 2 groups
+  black2(2.5);
+  black2(18);
+  
+  // black 3 groups
+  black3(9.1);
+  black3(24.65);
+  
+}
+
+function black2(shift) {
+  var keyW = width/14-5;
+  var blackH = 200;
+  offset = 30;
+  for (var i = 0; i < 2; i++)
+    {
+      fill(0);
+      rect(offset*shift+(i*keyW), offset, keyW*(2/3), blackH, 0, 0, 20, 20);
+    }
+}
+
+function black3(shift) {
+  var keyW = width/14-5;
+  var blackH = 200;
+  offset = 30;
+  for (var i = 0; i < 3; i++)
+    {
+      fill(0);
+      rect(offset*shift+(i*keyW), offset, keyW*(2/3), blackH, 0, 0, 20, 20);
+    }
+}
