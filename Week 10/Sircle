@@ -1,0 +1,36 @@
+function setup() {
+  createCanvas(800, 300);
+  textAlign(CENTER,CENTER);
+  textSize(height/7);
+}
+
+function draw() {
+  background(220);
+  var a = width/2;
+  var b = height/2;
+  var d = height/2;
+  
+  var num = 9;
+  
+  sircle(a, b, d);
+  
+  var result = squared(num);
+  
+  fill (0,128,128)
+  text(result, width/2, height/2);
+}
+
+// names don't matter and thus are written funny
+function sircle(rightness, downness, roundness)
+{
+  fill (rightness, downness, roundness);
+  stroke(255-rightness, 255-downness, 255-roundness)
+  ellipse(rightness, downness, roundness, roundness);
+}
+
+// give square of a number
+function squared(num)
+{
+  var result = num * num;
+  return result;
+}
