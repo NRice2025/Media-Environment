@@ -1,0 +1,50 @@
+var BobGoblin;
+var GregGoblin;
+var ZogGoblin;
+
+function setup() {
+  createCanvas(800, 300);
+  
+  BobGoblin = new Goblin();
+  GregGoblin = new Goblin();
+  ZogGoblin = new Goblin();
+}
+
+function draw() {
+  background(220);
+  BobGoblin.spawn();
+  BobGoblin.grow();
+  
+  GregGoblin.x = 150;
+  GregGoblin.rate = 3;
+  GregGoblin.R = 50;
+  GregGoblin.B = 125;
+  GregGoblin.spawn();
+  GregGoblin.grow();
+  
+  ZogGoblin.x = 650;
+  ZogGoblin.rate = 10;
+  ZogGoblin.R = 220;
+  ZogGoblin.G = 100;
+  ZogGoblin.spawn();
+  ZogGoblin.grow();
+}
+
+//Constructor Function -- title case
+function Goblin() {
+    this.R = 155
+    this.G = 197
+    this.B =  61
+    this.x = width/2
+    this.y = height/2
+    this.size = 50
+    this.rate = 1
+    this.spawn = function(){
+      noStroke();
+      fill(this.R, this.G, this.B)
+      ellipse(this.x,this.y,this.size);
+    }
+    this.grow = function(){
+      if (this.size < 200) {this.size = this.size+this.rate}
+    }
+  }
