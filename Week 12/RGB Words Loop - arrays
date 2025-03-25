@@ -1,0 +1,18 @@
+var words = ["I", "Love", "Making", "Cool", "Art"];
+
+function setup() {
+  createCanvas(600, 600);
+  textAlign(CENTER, CENTER);
+  frameRate(2);
+}
+
+function draw() {
+  background(random(1,255), random(1,255), random(1,255));
+  
+  var currentIndex = (frameCount-1) % words.length;
+  var currentWord = words[currentIndex];
+  
+  fill(255);
+  textSize(45)
+  text(currentWord, width/2, height/2);
+}
