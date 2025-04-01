@@ -1,0 +1,269 @@
+var osc;
+
+colors = [
+    [244, 178, 102],
+    [97, 152, 142],
+    [4, 67, 137],
+    [129, 23, 27],
+    [250, 25, 139],
+    [78, 205, 196],
+    [173, 247, 182],
+    [227, 181, 5],
+    [14, 71, 73],
+    [255, 103, 0]
+  ];
+
+function setup() {
+  createCanvas(1000, 400);
+  
+  osc = new p5.Oscillator();
+  osc.setType('sine');
+  
+  //sounds
+  key_c1 = new Key();
+  
+  key_d1 = new Key();
+  
+  key_e1 = new Key();
+  
+  key_f1 = new Key();
+  
+  key_g1 = new Key();
+  
+  key_a1 = new Key();
+  
+  key_b1 = new Key();
+  
+  key_c2 = new Key();
+  
+  key_d2 = new Key();
+  
+  key_e2 = new Key();
+  
+  key_f2 = new Key();
+  
+  key_g2 = new Key();
+  
+  key_a2 = new Key();
+  
+  key_b2 = new Key();
+  
+  key_cS = new Key();
+  
+  key_dS = new Key();
+  
+  key_fS = new Key();
+  
+  key_gS = new Key();
+  
+  key_aS = new Key();
+  
+  key_cS2 = new Key();
+  
+  key_dS2 = new Key();
+  
+  key_fS2 = new Key();
+  
+  key_gS2 = new Key();
+  
+  key_aS2 = new Key();
+}
+
+function draw() {
+    background(220);
+  
+  var keyW = width/14-5;
+  var whiteH = 300;
+  offset = 30;
+  
+  // all of white keys
+  for (var i = 0; i < 14; i++)
+    {
+      fill(255)
+      rect(offset+(i*keyW), offset, keyW, whiteH, 0, 0, 20, 20);
+    }
+  
+  // black 2 groups
+  black2(2.5);
+  black2(18);
+  
+  // black 3 groups
+  black3(9.1);
+  black3(24.65);
+  
+  //Make Sounds
+  key_c1.press();
+  
+  key_d1.press();
+  key_d1.butt=87
+  key_d1.x = 129;
+  key_d1.freq = 277.1826;
+  
+  key_e1.press();
+  key_e1.butt = 69
+  key_e1.x = 190;
+  key_e1.freq = 329.6276;
+  
+  key_f1.press();
+  key_f1.butt=82
+  key_f1.x = 262;
+  key_f1.freq = 349.2282;
+  
+  key_g1.press();
+  key_g1.butt=84
+  key_g1.x = 332;
+  key_g1.freq = 391.9954;
+  
+  key_a1.press();
+  key_a1.butt=89
+  key_a1.x = 397;
+  key_a1.freq = 440.0000;
+  
+  key_b1.press();
+  key_b1.butt=85
+  key_b1.x = 464;
+  key_b1.freq = 493.8833;
+  
+  key_c2.press();
+  key_c2.butt=90
+  key_c2.x = 531;
+  key_b2.freq = 523.2511;
+  
+  key_d2.press();
+  key_d2.butt=88
+  key_d2.x = 596;
+  key_d2.freq = 587.3295;
+  
+  key_e2.press();
+  key_e2.butt=67
+  key_e2.x = 660;
+  key_e2.freq = 659.2551;
+  
+  key_f2.press();
+  key_f2.butt=86
+  key_f2.x = 726;
+  key_f2.freq = 698.4565;
+  
+  key_g2.press();
+  key_g2.butt=66
+  key_g2.x = 793;
+  key_g2.freq = 783.9909;
+  
+  key_a2.press();
+  key_a2.butt=78
+  key_a2.x = 857;
+  key_a2.freq = 880.0000;
+  
+  key_b2.press();
+  key_b2.butt=77
+  key_b2.x = 926;
+  key_b2.freq = 987.7666;
+  
+  key_cS.press();
+  key_cS.butt=50
+  key_cS.x = 95;
+  key_cS.y = 190;
+  key_cS.freq = 277.1826;
+  
+  key_dS.press();
+  key_dS.butt=51
+  key_dS.x = 162;
+  key_dS.y = 190;
+  key_dS.freq = 311.1270;
+  
+  key_fS.press();
+  key_fS.butt=53
+  key_fS.x = 296;
+  key_fS.y = 190;
+  key_fS.freq = 369.9944;
+  
+  key_gS.press();
+  key_gS.butt=54
+  key_gS.x = 363;
+  key_gS.y = 190;
+  key_gS.freq = 415.3047;
+  
+  key_aS.press();
+  key_aS.butt=55
+  key_aS.x = 427;
+  key_aS.y = 190;
+  key_aS.freq = 466.1638;
+  
+  key_cS2.press();
+  key_cS2.butt=83
+  key_cS2.x = 566;
+  key_cS2.y = 190;
+  key_cS2.freq = 554.3653;
+  
+  key_dS2.press();
+  key_dS2.butt=68
+  key_dS2.x = 630;
+  key_dS2.y = 190;
+  key_dS2.freq = 622.2540;
+  
+  key_fS2.press();
+  key_fS2.butt=71
+  key_fS2.x = 761;
+  key_fS2.y = 190;
+  key_fS2.freq = 739.9888;
+  
+  key_gS2.press();
+  key_gS2.butt=72
+  key_gS2.x = 826;
+  key_gS2.y = 190;
+  key_gS2.freq = 830.6094;
+  
+  key_aS2.press();
+  key_aS2.butt=74
+  key_aS2.x = 894;
+  key_aS2.y = 190;
+  key_aS2.freq = 932.3275;
+}
+
+function black2(shift) {
+  var keyW = width/14-5;
+  var blackH = 200;
+  offset = 30;
+  for (var i = 0; i < 2; i++)
+    {
+      fill(0);
+      rect(offset*shift+(i*keyW), offset, keyW*(2/3), blackH, 0, 0, 20, 20);
+    }
+}
+
+function black3(shift) {
+  var keyW = width/14-5;
+  var blackH = 200;
+  offset = 30;
+  for (var i = 0; i < 3; i++)
+    {
+      fill(0);
+      rect(offset*shift+(i*keyW), offset, keyW*(2/3), blackH, 0, 0, 20, 20);
+    }
+}
+
+function keyReleased()
+{
+  osc.amp(0, 0.5)
+}
+
+function Key() {
+  var randomIndex = parseInt(random(colors.length))
+  this.butt = 81
+  this.freq = 261.6256
+  
+  this.x = 63
+  this.y = 284
+  
+  this.press = function() {  
+    if (keyIsDown(this.butt))
+    {
+      osc.start();
+      osc.freq(this.freq);
+      osc.amp(1000, 0.05);
+      
+      fill(colors[randomIndex]);
+      ellipse(this.x, this.y, 50, 50);
+    }
+  }
+}
