@@ -1,0 +1,23 @@
+var words = ['I', 'am', 'very', 'passionate', 'about', 'game', 'design.', 'When', 'my', 'parents', 'found', 'out', 'about', 'HU', 'and', 'its', 'reputation,', 'they', 'suggested', 'it', 'to', 'me.', 'I', 'feel', 'more', 'at', 'home', 'here', 'than', 'any', 'school', 'I', 'have', 'ever', 'been', 'to', 'before,', 'I', 'could', 'not', 'be', 'happier!', ''];
+
+function setup() {
+  createCanvas(700, 450);
+  textAlign(CENTER, CENTER);
+  frameRate(2);
+}
+
+function draw() {
+  background(random(1,255), random(1,255), random(1,255));
+  
+  textStyle(BOLDITALIC)
+  // textSize(32) - This also works to define text size.
+  textFont('Courier New', 32) //Text size is also a subset of textFont()
+  text('Harrisburg University', 240, 50)
+  
+  var currentIndex = (frameCount-1) % words.length;
+  var currentWord = words[currentIndex];
+  
+  fill(255);
+  textSize(45)
+  text(currentWord, width/2, height/2);
+}

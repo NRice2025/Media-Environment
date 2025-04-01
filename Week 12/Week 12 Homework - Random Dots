@@ -1,0 +1,18 @@
+var circles = [];
+
+function setup() {
+  createCanvas(700, 600);
+  background(random(1,255), random(1,255), random(1,255));
+  fill(random(1,255), random(1,255), random(1,255));
+  
+  for (var i = 0; i < 100; i++)
+    {
+      var it = circle(random(width), random(height), 55, 55)
+      circles.push(it);
+    }
+}
+
+function draw() {
+  var currentIndex = (frameCount-1) % circles.length;
+  var currentIt = circles[currentIndex];
+}
