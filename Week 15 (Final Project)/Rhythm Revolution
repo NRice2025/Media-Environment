@@ -31,7 +31,7 @@ function draw() {
   text(">", (width/5)*4, (height/4)*3);
   
   fill(147, 129, 255);
-  if (frameCount === 1 || frameCount % 60 === 0){
+  if (frameCount === 1 || frameCount % speed === 0){
     content = parseInt(random(4));
   }
   text(prompt[content], width/2, height/4+10);
@@ -39,7 +39,7 @@ function draw() {
   if (score === 0)
     {speed = 75}
   if (score === 10)
-    {speed = 70}
+    {speed = 65}
   if (score === 20)
     {speed = 60}
   if (score === 30)
