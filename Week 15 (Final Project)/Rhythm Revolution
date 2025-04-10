@@ -1,0 +1,57 @@
+var score;
+var prompt = [];
+var speed;
+
+function setup() {
+  createCanvas(725, 600);
+  
+  score = 0;
+  speed = 75;
+  
+  prompt = ["<","^","v",">"]
+}
+
+function draw() {
+  background(0);
+  fill(255);
+  textSize(50);
+  textAlign(LEFT, TOP);
+  text("Score:"+score, width/30, height/10-5);
+  
+  textSize(100);
+  textAlign(CENTER, CENTER);
+  
+  fill(230, 57, 70);
+  text("<", (width/5)*1, (height/4)*3);
+  fill(255, 174, 3);
+  text("^", (width/5)*2, (height/4)*3);
+  fill(168, 218, 220);
+  text("v", (width/5)*3, (height/4)*3);
+  fill(12, 131, 70);
+  text(">", (width/5)*4, (height/4)*3);
+  
+  fill(147, 129, 255);
+  if (frameCount === 1 || frameCount % 60 === 0){
+    content = parseInt(random(4));
+  }
+  text(prompt[content], width/2, height/4+10);
+  
+  if (score === 0)
+    {speed = 75}
+  if (score === 10)
+    {speed = 70}
+  if (score === 20)
+    {speed = 60}
+  if (score === 30)
+    {speed = 55}
+  if (score === 40)
+    {speed = 50}
+  if (score === 50)
+    {speed = 45}
+  if (score === 75)
+    {speed = 35}
+  if (score === 90)
+    {speed = 25}
+  if (score === 100)
+    {noLoop()}
+}
