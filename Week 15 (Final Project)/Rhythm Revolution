@@ -1,6 +1,8 @@
 var score;
 var prompt = [];
 var speed;
+var pulse;
+var failMSG = [];
 
 function setup() {
   createCanvas(725, 600);
@@ -8,15 +10,32 @@ function setup() {
   score = 0;
   speed = 75;
   
-  prompt = ["<","^","v",">"]
+  prompt = ["<","^","v",">"];
+  
+  pulse = false;
+  
+  failMSG = ["You Lose!", "Nice Try", "Sorry, not Sorry", "You'll Get There!"]
+  
+  ellipseMode(CENTER, CENTER);
 }
 
 function draw() {
-  background(0);
+  if (frameCount === 1 || frameCount % speed === 0){
+    if (pulse === false)
+    {
+      background(0);
+      pulse = true;
+    }
+    else
+      {
+        background(37, 60, 120);
+        pulse = false;
+      }
+  } 
   fill(255);
   textSize(50);
   textAlign(LEFT, TOP);
-  text("Score:"+score, width/30, height/10-5);
+  text("Score: "+score, width/30, height/10-5);
   
   textSize(100);
   textAlign(CENTER, CENTER);
@@ -36,22 +55,62 @@ function draw() {
   }
   text(prompt[content], width/2, height/4+10);
   
-  if (score === 0)
-    {speed = 75}
-  if (score === 10)
-    {speed = 65}
-  if (score === 20)
+  if (score >= 0)
+    {speed = 70}
+  if (score >= 10)
     {speed = 60}
-  if (score === 30)
+  if (score >= 20)
     {speed = 55}
-  if (score === 40)
+  if (score >= 30)
     {speed = 50}
-  if (score === 50)
+  if (score >= 40)
     {speed = 45}
-  if (score === 75)
+  if (score >= 50)
+    {speed = 40}
+  if (score >= 75)
     {speed = 35}
-  if (score === 90)
-    {speed = 25}
-  if (score === 100)
-    {noLoop()}
+  if (score >= 90)
+    {speed = 20}
+  if (score >= 100)
+    {
+      fill(198, 249, 31);
+      text("You Win!", width/2, height/2);
+      noLoop();
+    }
+  if (score < 0)
+    {
+      fill(198, 249, 31);
+      text(failMSG[parseInt(random(4))], width/2, height/2);
+      noLoop();
+    }
+}
+
+function keyPressed()
+{
+  console.log("you pressed"+key)
+  if (content === 0 && key === "ArrowLeft")
+    {
+      background(141, 99, 70)
+      score++;
+    }
+  else if(content === 1 && key === "ArrowUp")
+    {
+      background(141, 99, 70)
+      score++;
+    }
+  else if(content === 2 && key === "ArrowDown")
+    {
+      background(141, 99, 70)
+      score++;
+    }
+  else if(content === 3 && key === "ArrowRight")
+    {
+      background(141, 99, 70)
+      score++;
+    }
+  else
+    {
+      background(255, 0, 0)
+      score--;
+    }
 }
