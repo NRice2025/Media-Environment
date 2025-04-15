@@ -15,8 +15,6 @@ function setup() {
   pulse = false;
   
   failMSG = ["You Lose!", "Nice Try", "Sorry, not Sorry", "You'll Get There!"]
-  
-  ellipseMode(CENTER, CENTER);
 }
 
 function draw() {
